@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= myObject.name %>'s Profile</title>
+  <style>
+    body {
+      font-family: arial;
+    }
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .breadcrumb {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><%= myObject.name %>'s Profile</h1>
+  <p class="breadcrumb"><a href="/">Home</a> >
+    <a href="/classrooms">Classrooms</a> >
+    <a href="/classroom/<%= subjects.id %>">Classroom</a> > Profile</p>
+  <h3>Name: <%= myObject.name %></h3>
+  <p>Scores: <%= myObject.scores %></p>
+  <p>Grade: <%= myObject.grade %></p>
+  <p>ID: <%= myObject.id %></p>
+  <p>Student of <%= subjects.subject %></p>
+  <br>
+  <p><a href="/edit/<%= subjects.id %>/<%= myObject.id %>">Edit Profile</a></p>
+
+</body>
+</html>

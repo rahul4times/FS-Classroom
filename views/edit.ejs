@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit <%= sObject.name %>'s Profile</title>
+    <style>
+      body{
+        font-family: arial;
+      }
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+      }
+      form{
+        font-size: 20px;
+      }
+      input{
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Edit <%= sObject.name %>'s Profile</h1>
+    <br>
+    <br>
+    <form action="/edit/:<%= mainObject.id %>/" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" readonly value="<%= sObject.name %>">
+      <br>
+      <br>
+      <label for="score">Score:</label>
+      <% for(let i=0; i< sObject.scores.length; i++){%>
+        <input type="text" name="score" size="3" value="<%= sObject.scores[i] %>">
+        <% } %>
+      <br>
+      <br>
+      <label for="grade">Grade:</label>
+      <input type="text" name="grade" size="2" value="<%= sObject.grade %>">
+      <br>
+      <br>
+      <label for="id">ID:</label>
+      <input type="text" name="id" size="4" readonly value="<%= sObject.id %>">
+      <br>
+      <br>
+      <input type="submit" value="Update Profile">
+    </form>
+  </body>
+</html>

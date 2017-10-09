@@ -3,7 +3,8 @@
 As a teacher, I need to have a way to keep track of my students scores over time. Help me super-students!
 
 ### Instructions
-Using the provided classrooms.json file, you will build out student tracking software following the general stories written in this readme. How the page is styled is up to you. It should look nice but focus on functionality first! Remember that the FS module can both read and write to files! The classroom.json.bak file is provided in case you accidentally delete your classroom.json file whilst working on the project **LET'S TAKE CHANCES, MAKE MISTAKES, AND GET MESSY!!!**
+Using the provided classrooms.json file, you will build out student tracking software following the general stories written in this readme. How the page is styled is up to you. It should look nice but focus on functionality first! Remember that the FS module can both read and write to files! The classroom.json.bak file is provided in case you accidentally delete your classroom.json file whilst working on the project
+**LET'S TAKE CHANCES, MAKE MISTAKES, AND GET MESSY!!!**
 
 ### Stories
 * As an instructor, when I go to the landing page of your application, I want to see and landing page.

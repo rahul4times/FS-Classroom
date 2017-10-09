@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Classroom - <%= myObject.subject %></title>
+    <style>
+      body{
+        font-family: arial;
+      }
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .breadcrumb{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Classroom - <%= myObject.subject %></h1>
+    <p class="breadcrumb"><a href="/">Home</a> > <a href="/classrooms">Classrooms</a> > Classroom</p>
+    <h3>STUDENTS</h3>
+    <% for(let i=0; i<myObject.students.length; i++){ %>
+      <h4><a href="/profile/<%= myObject.id %>/<%= myObject.students[i].id %>"><%= myObject.students[i].name %></a></h4>
+    <% } %>
+  </body>
+</html>

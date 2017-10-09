@@ -1,0 +1,15 @@
+Classes / Subjects
+-------------------
+  :: Math - id - 0
+  :: Math - id - 3
+  :: Science - id - 1
+  :: Music - id - 2
+  :: Literature - id - 4
+  :: Literature - id - 5
+
+Students
+---------
+  :: name
+  :: scores
+  :: grade
+  :: id
