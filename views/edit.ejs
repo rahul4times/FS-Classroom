@@ -22,15 +22,19 @@
   <body>
     <h1>Edit <%= sObject.name %>'s Profile</h1>
     <br>
+    <p class="breadcrumb"><a href="/">Home</a> >
+      <a href="/classrooms">Classrooms</a> >
+      <a href="/classroom/<%= mainObject.id %>">Classroom</a> >
+      <a href="/profile/<%= mainObject.id %>/<%= sObject.id %>"> <%= sObject.name %>'s Profile</a> > Edit <%= sObject.name %>'s Profile</p>
     <br>
-    <form action="/edit/:<%= mainObject.id %>/" method="post">
+    <form action="/edit/<%= mainObject.id %>/" method="post">
       <label for="name">Name:</label>
       <input type="text" name="name" readonly value="<%= sObject.name %>">
       <br>
       <br>
-      <label for="score">Score:</label>
-      <% for(let i=0; i< sObject.scores.length; i++){%>
-        <input type="text" name="score" size="3" value="<%= sObject.scores[i] %>">
+      <label for="scores">Score:</label>
+      <% for(let i=0; i < sObject.scores.length; i++){%>
+        <input type="text" name="scores" size="3" value="<%= sObject.scores[i] %>">
         <% } %>
       <br>
       <br>

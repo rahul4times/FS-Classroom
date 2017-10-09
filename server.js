@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 8000;
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/static'));
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 //Index page
@@ -61,7 +61,7 @@ app.get('/profile/:subid/:stuid', function(req,res){
   })
 });
 
-// Update student's grades
+// Update student's scores/grades
 app.get('/edit/:sbid/:stid', function(req, res) {
   fs.readFile('./classrooms.json', 'utf8', function(err, data){
     if(err) throw err;
@@ -84,65 +84,31 @@ app.get('/edit/:sbid/:stid', function(req, res) {
   });
 });
 
-
+// Update student's scores/grades post request
 app.post('/edit/:sbid/', function(req, res) {
   fs.readFile('./classrooms.json', 'utf8', function(err, data){
     if(err) throw err;
     var temp = JSON.parse(data);
 
-    console.log(req.body);
-    console.log('Class id: ', req.params.sbid);
-
-    var subjectId = parseInt(req.body.sbid);
+    var subjectId = parseInt(req.params.sbid);
     var studentId = parseInt(req.body.id);
 
-
     for(let i=0; i<temp.length; i++){
-      //console.log("found!");
       if(temp[i].id === subjectId){
-        console.log("found!");
         for(let j=0; j<temp[i].students.length; j++){
           if(temp[i].students[j].id === studentId){
-
-            temp[i].students[j] = req.body;
-
+            temp[i].students[j].scores = req.body.scores;
             fs.writeFile("./classrooms.json", JSON.stringify(temp), function(err){
               if(err) throw err;
-
-              console.log('Updated!');
-
-              //res.redirect('/profile');
-
+                console.log('Updated!');
+              res.redirect('/profile/' + subjectId + '/' + studentId);
             });
-
           } // second if statement ends here
-
-
         } // second for loop ends here
-
-
       } // first if statement ends here
-
-
     } // first for loop ends here
-
-
-
-
-
-
-
-
   });
 });
-
-
-
-
-
-
-
-
 
 app.listen(port, function () {
   console.log("Server Running " + port);

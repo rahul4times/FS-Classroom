@@ -1,0 +1,6 @@
+body{
+  font-family: arial;
+  margin-top: 5%;
+  text-align: center;
+  background-image: image('/background.jpg');
+}
