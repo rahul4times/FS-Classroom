@@ -2,5 +2,9 @@ body{
   font-family: arial;
   margin-top: 5%;
   text-align: center;
-  background-image: image('/background.jpg');
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll, fixed;
+  background-position: center;
 }

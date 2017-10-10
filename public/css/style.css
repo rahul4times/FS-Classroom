@@ -1,0 +1,43 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+h4{
+  font-size: 28px;
+  padding-top: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.path{
+  background-color: #fcfcfc;
+  border: 1px solid #f5f5f5;
+  padding: 16px;
+  vertical-align: middle;
+  margin-bottom: 35px;
+}
+.path ul{
+  margin: 0;
+  padding: 0;
+}
+.path ul li{
+  display: inline-block;
+  padding-right: 3px;
+  padding-left: 3px;
+  text-transform: uppercase;
+  font-size: 14px;
+
+}
+.path ul li a{
+  color: #009B89;
+}

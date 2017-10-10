@@ -1,60 +1,86 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>G School Classrooms</title>
-    <style>
-      body{
-        font-family: arial;
-        text-align: center;
-      }
-      ul{
-        margin: 0;
-        padding: 0;
-      }
-      li{
-        display: inline-block;
-        float: left;
-        margin: 2%;
-        padding: 2%;
-        text-transform: uppercase;
-      }
-      .breadcrumb{
-        text-align: center;
-      }
-      form{
-        font-size: 20px;
-      }
-      select{
-        font-size: 20px;
-      }
-      input{
-        font-size: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>CLASSROOMS</h1>
-    <p class="breadcrumb"><a href="/">Home</a> > Classrooms</p>
-    <form action="/classrooms" method="post">
-      <label for="subject">Filter :</label>
-      <select name="subject">
-        <% for(let i=0; i<myObject.length; i++){ %>
-          <option value="<%= myObject[i].subject %>"><%= myObject[i].subject %></option>
-        <% } %>
-      </select>
-      <input type="submit" value="Apply">
-    </form>
+<html lang="en">
 
-    <% for (let i=0; i<myObject.length; i++){ %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>G School - Classrooms</title>
 
-      <ul>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
 
-        <li><h3><a href="/classroom/<%= myObject[i].id %>"> <%= myObject[i].subject %> </a></h3></li>
-
+<body>
+  <nav class="teal" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">G School</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
       </ul>
 
-    <% } %>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Home</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="container">
+    <h4>classrooms</h4>
 
-  </body>
+    <div class="col s12 path">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>></li>
+        <li>Classrooms</li>
+      </ul>
+    </div>
+
+    <div class="col s12">
+      <table class="bordered highlight">
+        <thead>
+          <tr>
+            <th>CLASSROOM</th>
+            <th>CLASSROOM ID</th>
+            <th>NO OF STUDENTS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i=0; i<myObject.length; i++){ %>
+            <tr>
+              <td>
+                <a href="/classroom/<%= myObject[i].id %>">
+                  <%= myObject[i].subject %>
+                </a>
+              </td>
+              <td>
+                <%= myObject[i].id %>
+              </td>
+              <td>
+                <%= myObject[i].students.length %>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2017, Rahul Sharma
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./js/materialize.js"></script>
+  <script src="./js/init.js"></script>
+
+</body>
+
 </html>

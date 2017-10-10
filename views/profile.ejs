@@ -1,36 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title><%= myObject.name %>'s Profile</title>
-  <style>
-    body {
-      font-family: arial;
-    }
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>G School - Classrooms</title>
 
-    h1 {
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    .breadcrumb {
-      text-align: center;
-    }
-  </style>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
-  <h1><%= myObject.name %>'s Profile</h1>
-  <p class="breadcrumb"><a href="/">Home</a> >
-    <a href="/classrooms">Classrooms</a> >
-    <a href="/classroom/<%= subjects.id %>">Classroom</a> > Profile</p>
-  <h3>Name: <%= myObject.name %></h3>
-  <p>Scores: <%= myObject.scores %></p>
-  <p>Grade: <%= myObject.grade %></p>
-  <p>ID: <%= myObject.id %></p>
-  <p>Student of <%= subjects.subject %></p>
-  <br>
-  <p><a href="/edit/<%= subjects.id %>/<%= myObject.id %>">Edit Profile</a></p>
+  <nav class="teal" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">G School</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+      </ul>
 
-</body>
-</html>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Home</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="container">
+    <h4><%= myObject.name %>'s Profile</h4>
+    <div class="col s12 path">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li>></li>
+        <li><a href="/classrooms">Classrooms</a></li>
+        <li>></li>
+        <li><a href="/classroom/<%= subjects.id %>">Classroom</a></li>
+        <li>></li>
+        <li>Profile</li>
+      </ul>
+    </div>
+
+    <div class="col s12">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="/student.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3>Name: <%= myObject.name %></h3>
+          <p>Scores: <%= myObject.scores %></p>
+          <p>Grade: <%= myObject.grade %></p>
+          <p>ID: <%= myObject.id %></p>
+          <p>Student of <%= subjects.subject %></p>
+        </div>
+        <div class="card-action">
+          <a href="/edit/<%= subjects.id %>/<%= myObject.id %>">Edit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; 2017, Rahul Sharma
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./js/materialize.js"></script>
+  <script src="./js/init.js"></script>
+
+  </body>
+
+  </html>
