@@ -44,26 +44,26 @@
       </ul>
     </div>
 
-    <form action="/edit/<%= mainObject.id %>/" method="post">
+    <form id="myForm" action="/edit/<%= mainObject.id %>/" method="post">
       <label for="name">Name:</label>
-      <input type="text" name="name" readonly value="<%= sObject.name %>">
+      <input id="name" type="text" name="name" readonly value="<%= sObject.name %>">
       <br>
       <br>
       <label for="scores">Score:</label>
       <% for(let i=0; i < sObject.scores.length; i++){%>
-        <input type="text" name="scores" size="3" value="<%= sObject.scores[i] %>">
+        <input id="score" type="text" name="scores" size="3" value="<%= sObject.scores[i] %>">
         <% } %>
           <br>
           <br>
           <label for="grade">Grade:</label>
-          <input type="text" name="grade" size="2" value="<%= sObject.grade %>">
+          <input type="text" id="grade" name="grade" size="2" value="<%= sObject.grade %>">
           <br>
           <br>
           <label for="id">ID:</label>
-          <input type="text" name="id" size="4" readonly value="<%= sObject.id %>">
+          <input type="text" id="sid" name="id" size="4" readonly value="<%= sObject.id %>">
           <br>
           <br>
-          <input type="submit" value="Update Profile">
+          <input id="subBtn" type="submit" value="Update Profile">
     </form>
     <br>
     <br>
